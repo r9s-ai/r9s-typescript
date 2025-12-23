@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- npm 包名：`@r9s-ai/typescript`
+- npm 包名：`r9s`
 - 仓库 Secret：`NPM_TOKEN`（拥有该包的 publish 权限）
 
 ## Steps
@@ -15,4 +15,3 @@
    - `git push --follow-tags`
 
 发布工作流：`.github/workflows/release.yml`
-

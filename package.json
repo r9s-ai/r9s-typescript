@@ -1,5 +1,5 @@
 {
-  "name": "@r9s-ai/typescript",
+  "name": "r9s",
   "version": "0.1.0",
   "description": "Official TypeScript SDK for r9s.ai",
   "main": "./dist/index.js",
