@@ -1,0 +1,9 @@
+#终端命令相关工具
+src/r9s/r9s_tools
+
+
+# 版本管理
+/package.json
+/tsconfig.json
+/README.md
+gen.yaml

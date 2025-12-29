@@ -1,0 +1,28 @@
+# ResponseOutputItem
+
+## Example Usage
+
+```typescript
+import { ResponseOutputItem } from "@r9s/sdk/models";
+
+let value: ResponseOutputItem = {
+  id: "<id>",
+  type: "function_call",
+};
+```
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                  | *string*                                                                                              | :heavy_check_mark:                                                                                    | Unique identifier for output item                                                                     |
+| `type`                                                                                                | [models.ResponseOutputItemType](../models/responseoutputitemtype.md)                                  | :heavy_check_mark:                                                                                    | Output type (message for final response, function_call for tool calls, reasoning for reasoning trace) |
+| `status`                                                                                              | [models.ResponseOutputItemStatus](../models/responseoutputitemstatus.md)                              | :heavy_minus_sign:                                                                                    | Output status                                                                                         |
+| `role`                                                                                                | [models.ResponseOutputItemRole](../models/responseoutputitemrole.md)                                  | :heavy_minus_sign:                                                                                    | Message role                                                                                          |
+| `content`                                                                                             | [models.ResponseOutputItemContent](../models/responseoutputitemcontent.md)[]                          | :heavy_minus_sign:                                                                                    | Content array                                                                                         |
+| `callId`                                                                                              | *string*                                                                                              | :heavy_minus_sign:                                                                                    | Function call ID                                                                                      |
+| `name`                                                                                                | *string*                                                                                              | :heavy_minus_sign:                                                                                    | Function name                                                                                         |
+| `arguments`                                                                                           | *string*                                                                                              | :heavy_minus_sign:                                                                                    | Function arguments (JSON string)                                                                      |
+| `output`                                                                                              | *string*                                                                                              | :heavy_minus_sign:                                                                                    | Function output                                                                                       |
+| `summary`                                                                                             | *models.Summary*                                                                                      | :heavy_minus_sign:                                                                                    | Natural-language summary of reasoning (for reasoning type), can be string or array                    |
+| `encryptedContent`                                                                                    | *string*                                                                                              | :heavy_minus_sign:                                                                                    | Encrypted reasoning tokens for stateless workflows (for reasoning type)                               |

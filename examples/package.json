@@ -1,0 +1,16 @@
+{
+  "name": "@r9s/sdk-examples",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "@r9s/sdk": "file:../dist",
+    "zod": "^3.25.65"
+  }
+}
