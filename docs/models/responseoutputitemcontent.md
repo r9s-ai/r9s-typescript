@@ -1,0 +1,19 @@
+# ResponseOutputItemContent
+
+## Example Usage
+
+```typescript
+import { ResponseOutputItemContent } from "@r9s/sdk/models";
+
+let value: ResponseOutputItemContent = {};
+```
+
+## Fields
+
+| Field                                                                                                                         | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                        | [models.ResponseOutputItemSchemasType](../models/responseoutputitemschemastype.md)                                            | :heavy_minus_sign:                                                                                                            | Content type (text for messages, output_text for responses, reasoning_text for reasoning traces, refusal for safety refusals) |
+| `text`                                                                                                                        | *string*                                                                                                                      | :heavy_minus_sign:                                                                                                            | Text content                                                                                                                  |
+| `refusal`                                                                                                                     | *string*                                                                                                                      | :heavy_minus_sign:                                                                                                            | Refusal content                                                                                                               |
+| `annotations`                                                                                                                 | *any*[]                                                                                                                       | :heavy_minus_sign:                                                                                                            | Content annotations                                                                                                           |
+| `logprobs`                                                                                                                    | *any*[]                                                                                                                       | :heavy_minus_sign:                                                                                                            | Log probabilities                                                                                                             |

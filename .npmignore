@@ -1,0 +1,16 @@
+**/*
+!/FUNCTIONS.md
+!/RUNTIMES.md
+!/REACT_QUERY.md
+!/**/*.ts
+!/**/*.js
+!/**/*.mjs
+!/**/*.json
+!/**/*.map
+
+/examples
+/eslint.config.mjs
+/cjs
+/.tshy
+/.tshy-*
+/__tests__
