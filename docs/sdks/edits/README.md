@@ -1,5 +1,4 @@
 # Edits
-(*edits*)
 
 ## Overview
 
@@ -11,9 +10,9 @@
 
 Edit given text according to instructions
 
-### Example Usage
+### Example Usage: fix_grammar
 
-<!-- UsageSnippet language="typescript" operationID="createEdit" method="post" path="/edits" -->
+<!-- UsageSnippet language="typescript" operationID="createEdit" method="post" path="/edits" example="fix_grammar" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -53,6 +52,116 @@ async function run() {
     model: "gpt-4o-mini",
     input: "What day of the wek is it?",
     instruction: "Fix the spelling mistakes",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("editsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: improve_text
+
+<!-- UsageSnippet language="typescript" operationID="createEdit" method="post" path="/edits" example="improve_text" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.edits.create({
+    model: "qwen-plus",
+    input: "The cat sat on the mat.",
+    instruction: "Make this more interesting and descriptive",
+    temperature: 0.7,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { editsCreate } from "@r9s/sdk/funcs/editsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await editsCreate(r9S, {
+    model: "qwen-plus",
+    input: "The cat sat on the mat.",
+    instruction: "Make this more interesting and descriptive",
+    temperature: 0.7,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("editsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: rewrite_tone
+
+<!-- UsageSnippet language="typescript" operationID="createEdit" method="post" path="/edits" example="rewrite_tone" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.edits.create({
+    model: "gpt-5-nano",
+    input: "Can you send me that report asap?",
+    instruction: "Rewrite in a polite and formal tone",
+    temperature: 0.2,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { editsCreate } from "@r9s/sdk/funcs/editsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await editsCreate(r9S, {
+    model: "gpt-5-nano",
+    input: "Can you send me that report asap?",
+    instruction: "Rewrite in a polite and formal tone",
+    temperature: 0.2,
   });
   if (res.ok) {
     const { value: result } = res;

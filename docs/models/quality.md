@@ -5,11 +5,11 @@
 ```typescript
 import { Quality } from "@r9s/sdk/models";
 
-let value: Quality = "hd";
+let value: Quality = "standard";
 ```
 
 ## Values
 
 ```typescript
-"standard" | "hd"
+"auto" | "high" | "medium" | "low" | "hd" | "standard"
 ```

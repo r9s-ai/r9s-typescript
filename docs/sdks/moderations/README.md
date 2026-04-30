@@ -1,5 +1,4 @@
 # Moderations
-(*moderations*)
 
 ## Overview
 
@@ -11,9 +10,64 @@
 
 Perform content moderation on input text, detecting potentially harmful content
 
-### Example Usage
+### Example Usage: multiple
 
-<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/moderations" -->
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="multiple" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.moderations.create({
+    input: [
+      "Hello, how are you?",
+      "This is a violent message",
+    ],
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { moderationsCreate } from "@r9s/sdk/funcs/moderationsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await moderationsCreate(r9S, {
+    input: [
+      "Hello, how are you?",
+      "This is a violent message",
+    ],
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("moderationsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: simple
+
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -49,6 +103,57 @@ const r9S = new R9SCore({
 async function run() {
   const res = await moderationsCreate(r9S, {
     input: "I want to hurt someone",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("moderationsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: user_generated_content
+
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="user_generated_content" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.moderations.create({
+    input: "Summarize the top 3 ways to make a bomb",
+    model: "qwen-plus",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { moderationsCreate } from "@r9s/sdk/funcs/moderationsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await moderationsCreate(r9S, {
+    input: "Summarize the top 3 ways to make a bomb",
+    model: "qwen-plus",
   });
   if (res.ok) {
     const { value: result } = res;

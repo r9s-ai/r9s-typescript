@@ -14,6 +14,7 @@ import * as errors from "../errors/index.js";
 import { R9SError } from "../errors/r9serror.js";
 import { ResponseValidationError } from "../errors/responsevalidationerror.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -76,7 +77,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/models")();
+  const path = pathToFunc("/v1/models")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -117,7 +118,8 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["401", "403", "4XX", "500", "5XX"],
+    isErrorStatusCode: (statusCode: number) =>
+      matchStatusCode({ status: statusCode } as Response, ["4XX", "5XX"]),
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });

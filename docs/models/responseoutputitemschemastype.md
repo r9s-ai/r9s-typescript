@@ -8,11 +8,11 @@ Content type (text for messages, output_text for responses, reasoning_text for r
 import { ResponseOutputItemSchemasType } from "@r9s/sdk/models";
 
 let value: ResponseOutputItemSchemasType = "reasoning_text";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "text" | "refusal" | "output_text" | "reasoning_text" | Unrecognized<string>

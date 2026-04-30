@@ -3,6 +3,8 @@
  */
 
 import { imagesCreate } from "../funcs/imagesCreate.js";
+import { imagesCreateEdit } from "../funcs/imagesCreateEdit.js";
+import { EventStream } from "../lib/event-streams.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -15,10 +17,51 @@ export class Images extends ClientSDK {
    * Generate images from text prompts
    */
   async create(
+    request: models.ImageGenerationRequest & { stream?: false | undefined },
+    options?: RequestOptions,
+  ): Promise<models.ImageGenerationResponse>;
+  async create(
+    request: models.ImageGenerationRequest & { stream: true },
+    options?: RequestOptions,
+  ): Promise<EventStream<models.ImageGenerationStreamEvent>>;
+  async create(
     request: models.ImageGenerationRequest,
     options?: RequestOptions,
-  ): Promise<models.ImageGenerationResponse> {
+  ): Promise<models.CreateImageGenerationResponse>;
+  async create(
+    request: models.ImageGenerationRequest,
+    options?: RequestOptions,
+  ): Promise<models.CreateImageGenerationResponse> {
     return unwrapAsync(imagesCreate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Edit image
+   *
+   * @remarks
+   * Create an edited or extended image given an original and prompt
+   */
+  async createEdit(
+    request: models.ImageEditRequest & { stream?: false | undefined },
+    options?: RequestOptions,
+  ): Promise<models.ImageGenerationResponse>;
+  async createEdit(
+    request: models.ImageEditRequest & { stream: true },
+    options?: RequestOptions,
+  ): Promise<EventStream<models.ImageEditStreamEvent>>;
+  async createEdit(
+    request: models.ImageEditRequest,
+    options?: RequestOptions,
+  ): Promise<models.CreateImageEditResponse>;
+  async createEdit(
+    request: models.ImageEditRequest,
+    options?: RequestOptions,
+  ): Promise<models.CreateImageEditResponse> {
+    return unwrapAsync(imagesCreateEdit(
       this,
       request,
       options,

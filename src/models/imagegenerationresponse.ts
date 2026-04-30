@@ -8,10 +8,15 @@ import { safeParse } from "../lib/schemas.js";
 import { Result as SafeParseResult } from "../types/fp.js";
 import * as types from "../types/primitives.js";
 import { ImageObject, ImageObject$inboundSchema } from "./imageobject.js";
+import { ImageUsage, ImageUsage$inboundSchema } from "./imageusage.js";
 
 export type ImageGenerationResponse = {
   created: number;
   data: Array<ImageObject>;
+  /**
+   * Usage information for image generation (provider-dependent)
+   */
+  usage?: ImageUsage | undefined;
 };
 
 /** @internal */
@@ -21,6 +26,7 @@ export const ImageGenerationResponse$inboundSchema: z.ZodMiniType<
 > = z.object({
   created: types.number(),
   data: z.array(ImageObject$inboundSchema),
+  usage: types.optional(ImageUsage$inboundSchema),
 });
 
 export function imageGenerationResponseFromJSON(
