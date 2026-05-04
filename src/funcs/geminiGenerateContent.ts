@@ -33,8 +33,6 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Generates a model response given an input GenerateContentRequest.
  * This endpoint supports multimodal inputs (text, images, audio, video, PDFs) and conversation history.
- *
- * Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
  */
 export function geminiGenerateContent(
   client: R9SCore,

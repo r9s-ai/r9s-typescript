@@ -33,8 +33,6 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Generates a text embedding vector from the input content using the specified embedding model.
  * Supports different task types for optimized embeddings (retrieval, similarity, classification, etc.).
- *
- * Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
  */
 export function geminiEmbedContent(
   client: R9SCore,

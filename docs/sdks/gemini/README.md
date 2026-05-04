@@ -14,8 +14,6 @@
 Generates a model response given an input GenerateContentRequest.
 This endpoint supports multimodal inputs (text, images, audio, video, PDFs) and conversation history.
 
-Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
-
 
 ### Example Usage: audio_transcription
 
@@ -1349,8 +1347,6 @@ run();
 Generates a streamed response from the model given an input GenerateContentRequest.
 The response is returned as Server-Sent Events (SSE) for real-time streaming.
 
-Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
-
 
 ### Example Usage: simple_stream
 
@@ -1965,8 +1961,6 @@ run();
 
 Generates a text embedding vector from the input content using the specified embedding model.
 Supports different task types for optimized embeddings (retrieval, similarity, classification, etc.).
-
-Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
 
 
 ### Example Usage: clustering

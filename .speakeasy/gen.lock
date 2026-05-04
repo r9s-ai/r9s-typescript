@@ -1,16 +1,16 @@
 lockVersion: 2.0.0
 id: ba02e37a-9126-49e3-9270-0fbed2ea48f0
 management:
-  docChecksum: 1f97c39c8992e12facf321d1d6b5691e
+  docChecksum: 4e23ec259021a3a943bbc5167f1848da
   docVersion: 0.1.0
   speakeasyVersion: 1.761.9
   generationVersion: 2.881.4
-  releaseVersion: 0.7.1
-  configChecksum: c733a141c2c46a682d9da1b17f9948f2
+  releaseVersion: 0.7.2
+  configChecksum: 738c216c307f4c74d9e590f517a2b066
 persistentEdits:
-  generation_id: 0227d657-419e-423c-af36-564683298404
-  pristine_commit_hash: 4020b600f16ee23fbaed87474d1938114ff1c7be
-  pristine_tree_hash: bce4d4fed636fd3713907da290a8bb2f402553a5
+  generation_id: 7f1182b1-e2e8-43bc-ab49-c3035ffdf036
+  pristine_commit_hash: 5e04e8aae1a09e40360f65011bbf019f02214b63
+  pristine_tree_hash: 819387112d6f9b082477d152f0613a2156a42469
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -1400,8 +1400,8 @@ trackedFiles:
     pristine_git_object: 5360d334b7b3e264c5974f05087218c2463b2402
   docs/sdks/gemini/README.md:
     id: 2b82e7194c4e
-    last_write_checksum: sha1:c86375dd91c275bd452192852e24c6a137386baf
-    pristine_git_object: e54c343d460931279f202fddb61f466e349040a8
+    last_write_checksum: sha1:0da7c31c8396caedeaca2146427bc2d77cc0bbb4
+    pristine_git_object: d1a4a097e75e4e04a58831a2f99b46632f29f0af
   docs/sdks/images/README.md:
     id: cc752c3524d0
     last_write_checksum: sha1:699d303a0fc5c64885cb30986bbf2ea5c0aab4a2
@@ -1452,8 +1452,8 @@ trackedFiles:
     pristine_git_object: d9d95b4653d677d297c222df7975617e8dc02d0b
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:6ef1ff0d7875bcfd4ed5cd798a991d9524304eef
-    pristine_git_object: a3408bd852b9f54e303c378834e37ee8ce29f1ea
+    last_write_checksum: sha1:8ea31bbd5aa3c943c21fd174d1e7591fc4c63aa5
+    pristine_git_object: 67c0f9515eae744de7ab581e5f41bd72cd491ca2
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:8455eae053a61026f781c684421673037960c7ed
@@ -1556,16 +1556,16 @@ trackedFiles:
     pristine_git_object: 95551e5b30ff88fa088787bb8bbd33252189ed6d
   src/funcs/geminiEmbedContent.ts:
     id: e64773a483d4
-    last_write_checksum: sha1:658a0c14ade7bd0382bfc807b8ee2a4e8e13cab1
-    pristine_git_object: 2a5c156020c2204712a5436d0b1ddd7077c76573
+    last_write_checksum: sha1:f69ad08bed7e1800b46701bd5a4270d401d7b11a
+    pristine_git_object: ab574d39c7136e35a3745f48c73ee0c5b7c3f6a8
   src/funcs/geminiGenerateContent.ts:
     id: d39fa2962389
-    last_write_checksum: sha1:2b3ff60a92d14f1193998482d5395225ddbcc34f
-    pristine_git_object: 9dfea9aaff7e894391692c71ab9ae2fc31cf2d48
+    last_write_checksum: sha1:c4c74c2eba31bc27f2669e5e5c3bf9614df3063a
+    pristine_git_object: 6aad7c77155214e28a521e756c95f6a388bab552
   src/funcs/geminiStreamGenerateContent.ts:
     id: 7cfe72134a77
-    last_write_checksum: sha1:abb8a5cdf6a55e85d3514a7aa54718b2d576ab8e
-    pristine_git_object: 203b512343a63afa9738363396fcb6b8c2d1249f
+    last_write_checksum: sha1:66c05fd87169ea3fa9e0a74b082b4201477d138f
+    pristine_git_object: b4ea715b37af2e851bb20f8c6a8ed8b857e906dd
   src/funcs/imagesCreate.ts:
     id: 6ad6875c04bc
     last_write_checksum: sha1:93cbe4dac813ec7f81d44696dd1aad886d8a13e6
@@ -1624,8 +1624,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:aaad0572456125c378fcdcde7728c0e6ada2173b
-    pristine_git_object: da4019bc4b50ffe3fb29909db7cea7d9e35a2c22
+    last_write_checksum: sha1:bc109e1a252e4aceace0293c7c143d8e4b7037ee
+    pristine_git_object: 2d127171f65a9d8bd49e4b2bf9e1722ef79d3ff5
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -2240,8 +2240,8 @@ trackedFiles:
     pristine_git_object: d24d685e81f4e4d997a6ab5c0efc94a568ce737d
   src/sdk/gemini.ts:
     id: a2b72130284b
-    last_write_checksum: sha1:35630166e68bc8721555c710ebe711edc7dc7b69
-    pristine_git_object: 9af5d503cbdeb3f30bd0f4d0a834655cc5f6d4c4
+    last_write_checksum: sha1:2432432bf1618dee9f5eb7091006b8b6bed0032f
+    pristine_git_object: 6e22cbb40370929462a532b115aa4bfed507ae4f
   src/sdk/images.ts:
     id: 5b5822276576
     last_write_checksum: sha1:b83349f743c86a2d9b83b6c93952d1ce0dd7797d

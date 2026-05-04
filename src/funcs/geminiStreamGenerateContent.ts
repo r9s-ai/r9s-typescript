@@ -34,8 +34,6 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Generates a streamed response from the model given an input GenerateContentRequest.
  * The response is returned as Server-Sent Events (SSE) for real-time streaming.
- *
- * Authentication uses Bearer token in Authorization header (compatible with your platform's OpenAI-style auth).
  */
 export function geminiStreamGenerateContent(
   client: R9SCore,
