@@ -182,7 +182,23 @@ async function $do(
   const payload = parsed.value;
   const body = new FormData();
 
-  appendForm(body, "image", payload.image);
+  const images = Array.isArray(payload.image) ? payload.image : [payload.image];
+  for (const img of images) {
+    if (isBlobLike(img)) {
+      const blob = await normalizeBlob(img);
+      const name = "name" in img ? (img.name as string) : undefined;
+      appendForm(body, "image", blob, name);
+    } else if (isReadableStream(img.content)) {
+      const buffer = await readableStreamToArrayBuffer(img.content);
+      const contentType = getContentTypeFromFileName(img.fileName)
+        || "application/octet-stream";
+      appendForm(body, "image", bytesToBlob(buffer, contentType), img.fileName);
+    } else {
+      const contentType = getContentTypeFromFileName(img.fileName)
+        || "application/octet-stream";
+      appendForm(body, "image", bytesToBlob(img.content, contentType), img.fileName);
+    }
+  }
   appendForm(body, "prompt", payload.prompt);
   if (payload.background !== undefined) {
     appendForm(body, "background", payload.background);
