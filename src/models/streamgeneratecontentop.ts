@@ -19,6 +19,10 @@ import {
   GeminiGenerateContentResponse$inboundSchema,
 } from "./geminigeneratecontentresponse.js";
 
+export type StreamGenerateContentSecurity = {
+  googApiKey: string;
+};
+
 /**
  * Data format for the response (use 'sse' for server-sent events)
  */
@@ -57,6 +61,36 @@ export type StreamGenerateContentResponseBody = {
   event?: string | undefined;
   retry?: number | undefined;
 };
+
+/** @internal */
+export type StreamGenerateContentSecurity$Outbound = {
+  goog_api_key: string;
+};
+
+/** @internal */
+export const StreamGenerateContentSecurity$outboundSchema: z.ZodMiniType<
+  StreamGenerateContentSecurity$Outbound,
+  StreamGenerateContentSecurity
+> = z.pipe(
+  z.object({
+    googApiKey: z.string(),
+  }),
+  z.transform((v) => {
+    return remap$(v, {
+      googApiKey: "goog_api_key",
+    });
+  }),
+);
+
+export function streamGenerateContentSecurityToJSON(
+  streamGenerateContentSecurity: StreamGenerateContentSecurity,
+): string {
+  return JSON.stringify(
+    StreamGenerateContentSecurity$outboundSchema.parse(
+      streamGenerateContentSecurity,
+    ),
+  );
+}
 
 /** @internal */
 export const Alt$outboundSchema: z.ZodMiniEnum<typeof Alt> = z.enum(Alt);

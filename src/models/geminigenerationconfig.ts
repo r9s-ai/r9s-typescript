@@ -30,6 +30,79 @@ export type ResponseMimeType = OpenEnum<typeof ResponseMimeType>;
  */
 export type ResponseSchema = {};
 
+export const ResponseModalities = {
+  Text: "TEXT",
+  Image: "IMAGE",
+  Audio: "AUDIO",
+} as const;
+export type ResponseModalities = OpenEnum<typeof ResponseModalities>;
+
+export type PrebuiltVoiceConfig = {
+  /**
+   * Name of the prebuilt voice
+   */
+  voiceName?: string | undefined;
+};
+
+/**
+ * Voice configuration for speech synthesis
+ */
+export type VoiceConfig = {
+  prebuiltVoiceConfig?: PrebuiltVoiceConfig | undefined;
+};
+
+/**
+ * Configuration for speech output
+ */
+export type SpeechConfig = {
+  /**
+   * Voice configuration for speech synthesis
+   */
+  voiceConfig?: VoiceConfig | undefined;
+};
+
+/**
+ * Configuration for Gemini thinking mode
+ */
+export type ThinkingConfig = {
+  /**
+   * Token budget for thinking steps
+   */
+  thinkingBudget?: number | undefined;
+  /**
+   * Whether to include thinking steps in the response
+   */
+  includeThoughts?: boolean | undefined;
+};
+
+/**
+ * Configuration for image generation output
+ */
+export type ImageConfig = {
+  /**
+   * Number of images to generate
+   */
+  imageCount?: number | undefined;
+};
+
+/**
+ * Resolution for media inputs
+ */
+export const MediaResolution = {
+  MediaResolutionLow: "MEDIA_RESOLUTION_LOW",
+  MediaResolutionMedium: "MEDIA_RESOLUTION_MEDIUM",
+  MediaResolutionHigh: "MEDIA_RESOLUTION_HIGH",
+} as const;
+/**
+ * Resolution for media inputs
+ */
+export type MediaResolution = OpenEnum<typeof MediaResolution>;
+
+/**
+ * JSON schema for structured output (alternative to responseSchema)
+ */
+export type ResponseJsonSchema = {};
+
 /**
  * Configuration options for model generation
  */
@@ -66,6 +139,50 @@ export type GeminiGenerationConfig = {
    * Schema for structured output (when responseMimeType is application/json)
    */
   responseSchema?: ResponseSchema | undefined;
+  /**
+   * Random seed for deterministic generation
+   */
+  seed?: number | undefined;
+  /**
+   * Penalizes tokens based on presence in the text so far
+   */
+  presencePenalty?: number | undefined;
+  /**
+   * Penalizes tokens based on frequency in the text so far
+   */
+  frequencyPenalty?: number | undefined;
+  /**
+   * Whether to return log probabilities of output tokens
+   */
+  responseLogprobs?: boolean | undefined;
+  /**
+   * Number of top log probabilities to return per token
+   */
+  logprobs?: number | undefined;
+  /**
+   * Output modalities (TEXT, IMAGE, AUDIO)
+   */
+  responseModalities?: Array<ResponseModalities> | undefined;
+  /**
+   * Configuration for speech output
+   */
+  speechConfig?: SpeechConfig | undefined;
+  /**
+   * Configuration for Gemini thinking mode
+   */
+  thinkingConfig?: ThinkingConfig | undefined;
+  /**
+   * Configuration for image generation output
+   */
+  imageConfig?: ImageConfig | undefined;
+  /**
+   * Resolution for media inputs
+   */
+  mediaResolution?: MediaResolution | undefined;
+  /**
+   * JSON schema for structured output (alternative to responseSchema)
+   */
+  responseJsonSchema?: ResponseJsonSchema | undefined;
 };
 
 /** @internal */
@@ -107,6 +224,229 @@ export function responseSchemaFromJSON(
 }
 
 /** @internal */
+export const ResponseModalities$inboundSchema: z.ZodMiniType<
+  ResponseModalities,
+  unknown
+> = openEnums.inboundSchema(ResponseModalities);
+/** @internal */
+export const ResponseModalities$outboundSchema: z.ZodMiniType<
+  string,
+  ResponseModalities
+> = openEnums.outboundSchema(ResponseModalities);
+
+/** @internal */
+export const PrebuiltVoiceConfig$inboundSchema: z.ZodMiniType<
+  PrebuiltVoiceConfig,
+  unknown
+> = z.object({
+  voiceName: types.optional(types.string()),
+});
+/** @internal */
+export type PrebuiltVoiceConfig$Outbound = {
+  voiceName?: string | undefined;
+};
+
+/** @internal */
+export const PrebuiltVoiceConfig$outboundSchema: z.ZodMiniType<
+  PrebuiltVoiceConfig$Outbound,
+  PrebuiltVoiceConfig
+> = z.object({
+  voiceName: z.optional(z.string()),
+});
+
+export function prebuiltVoiceConfigToJSON(
+  prebuiltVoiceConfig: PrebuiltVoiceConfig,
+): string {
+  return JSON.stringify(
+    PrebuiltVoiceConfig$outboundSchema.parse(prebuiltVoiceConfig),
+  );
+}
+export function prebuiltVoiceConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<PrebuiltVoiceConfig, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PrebuiltVoiceConfig$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PrebuiltVoiceConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const VoiceConfig$inboundSchema: z.ZodMiniType<VoiceConfig, unknown> = z
+  .object({
+    prebuiltVoiceConfig: types.optional(
+      z.lazy(() => PrebuiltVoiceConfig$inboundSchema),
+    ),
+  });
+/** @internal */
+export type VoiceConfig$Outbound = {
+  prebuiltVoiceConfig?: PrebuiltVoiceConfig$Outbound | undefined;
+};
+
+/** @internal */
+export const VoiceConfig$outboundSchema: z.ZodMiniType<
+  VoiceConfig$Outbound,
+  VoiceConfig
+> = z.object({
+  prebuiltVoiceConfig: z.optional(
+    z.lazy(() => PrebuiltVoiceConfig$outboundSchema),
+  ),
+});
+
+export function voiceConfigToJSON(voiceConfig: VoiceConfig): string {
+  return JSON.stringify(VoiceConfig$outboundSchema.parse(voiceConfig));
+}
+export function voiceConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<VoiceConfig, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => VoiceConfig$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'VoiceConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const SpeechConfig$inboundSchema: z.ZodMiniType<SpeechConfig, unknown> =
+  z.object({
+    voiceConfig: types.optional(z.lazy(() => VoiceConfig$inboundSchema)),
+  });
+/** @internal */
+export type SpeechConfig$Outbound = {
+  voiceConfig?: VoiceConfig$Outbound | undefined;
+};
+
+/** @internal */
+export const SpeechConfig$outboundSchema: z.ZodMiniType<
+  SpeechConfig$Outbound,
+  SpeechConfig
+> = z.object({
+  voiceConfig: z.optional(z.lazy(() => VoiceConfig$outboundSchema)),
+});
+
+export function speechConfigToJSON(speechConfig: SpeechConfig): string {
+  return JSON.stringify(SpeechConfig$outboundSchema.parse(speechConfig));
+}
+export function speechConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<SpeechConfig, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => SpeechConfig$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'SpeechConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const ThinkingConfig$inboundSchema: z.ZodMiniType<
+  ThinkingConfig,
+  unknown
+> = z.object({
+  thinkingBudget: types.optional(types.number()),
+  includeThoughts: types.optional(types.boolean()),
+});
+/** @internal */
+export type ThinkingConfig$Outbound = {
+  thinkingBudget?: number | undefined;
+  includeThoughts?: boolean | undefined;
+};
+
+/** @internal */
+export const ThinkingConfig$outboundSchema: z.ZodMiniType<
+  ThinkingConfig$Outbound,
+  ThinkingConfig
+> = z.object({
+  thinkingBudget: z.optional(z.int()),
+  includeThoughts: z.optional(z.boolean()),
+});
+
+export function thinkingConfigToJSON(thinkingConfig: ThinkingConfig): string {
+  return JSON.stringify(ThinkingConfig$outboundSchema.parse(thinkingConfig));
+}
+export function thinkingConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<ThinkingConfig, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ThinkingConfig$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ThinkingConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const ImageConfig$inboundSchema: z.ZodMiniType<ImageConfig, unknown> = z
+  .object({
+    imageCount: types.optional(types.number()),
+  });
+/** @internal */
+export type ImageConfig$Outbound = {
+  imageCount?: number | undefined;
+};
+
+/** @internal */
+export const ImageConfig$outboundSchema: z.ZodMiniType<
+  ImageConfig$Outbound,
+  ImageConfig
+> = z.object({
+  imageCount: z.optional(z.int()),
+});
+
+export function imageConfigToJSON(imageConfig: ImageConfig): string {
+  return JSON.stringify(ImageConfig$outboundSchema.parse(imageConfig));
+}
+export function imageConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<ImageConfig, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ImageConfig$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ImageConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const MediaResolution$inboundSchema: z.ZodMiniType<
+  MediaResolution,
+  unknown
+> = openEnums.inboundSchema(MediaResolution);
+/** @internal */
+export const MediaResolution$outboundSchema: z.ZodMiniType<
+  string,
+  MediaResolution
+> = openEnums.outboundSchema(MediaResolution);
+
+/** @internal */
+export const ResponseJsonSchema$inboundSchema: z.ZodMiniType<
+  ResponseJsonSchema,
+  unknown
+> = z.object({});
+/** @internal */
+export type ResponseJsonSchema$Outbound = {};
+
+/** @internal */
+export const ResponseJsonSchema$outboundSchema: z.ZodMiniType<
+  ResponseJsonSchema$Outbound,
+  ResponseJsonSchema
+> = z.object({});
+
+export function responseJsonSchemaToJSON(
+  responseJsonSchema: ResponseJsonSchema,
+): string {
+  return JSON.stringify(
+    ResponseJsonSchema$outboundSchema.parse(responseJsonSchema),
+  );
+}
+export function responseJsonSchemaFromJSON(
+  jsonString: string,
+): SafeParseResult<ResponseJsonSchema, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ResponseJsonSchema$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ResponseJsonSchema' from JSON`,
+  );
+}
+
+/** @internal */
 export const GeminiGenerationConfig$inboundSchema: z.ZodMiniType<
   GeminiGenerationConfig,
   unknown
@@ -119,6 +459,19 @@ export const GeminiGenerationConfig$inboundSchema: z.ZodMiniType<
   stopSequences: types.optional(z.array(types.string())),
   responseMimeType: types.optional(ResponseMimeType$inboundSchema),
   responseSchema: types.optional(z.lazy(() => ResponseSchema$inboundSchema)),
+  seed: types.optional(types.number()),
+  presencePenalty: types.optional(types.number()),
+  frequencyPenalty: types.optional(types.number()),
+  responseLogprobs: types.optional(types.boolean()),
+  logprobs: types.optional(types.number()),
+  responseModalities: types.optional(z.array(ResponseModalities$inboundSchema)),
+  speechConfig: types.optional(z.lazy(() => SpeechConfig$inboundSchema)),
+  thinkingConfig: types.optional(z.lazy(() => ThinkingConfig$inboundSchema)),
+  imageConfig: types.optional(z.lazy(() => ImageConfig$inboundSchema)),
+  mediaResolution: types.optional(MediaResolution$inboundSchema),
+  responseJsonSchema: types.optional(
+    z.lazy(() => ResponseJsonSchema$inboundSchema),
+  ),
 });
 /** @internal */
 export type GeminiGenerationConfig$Outbound = {
@@ -130,6 +483,17 @@ export type GeminiGenerationConfig$Outbound = {
   stopSequences?: Array<string> | undefined;
   responseMimeType?: string | undefined;
   responseSchema?: ResponseSchema$Outbound | undefined;
+  seed?: number | undefined;
+  presencePenalty?: number | undefined;
+  frequencyPenalty?: number | undefined;
+  responseLogprobs?: boolean | undefined;
+  logprobs?: number | undefined;
+  responseModalities?: Array<string> | undefined;
+  speechConfig?: SpeechConfig$Outbound | undefined;
+  thinkingConfig?: ThinkingConfig$Outbound | undefined;
+  imageConfig?: ImageConfig$Outbound | undefined;
+  mediaResolution?: string | undefined;
+  responseJsonSchema?: ResponseJsonSchema$Outbound | undefined;
 };
 
 /** @internal */
@@ -145,6 +509,19 @@ export const GeminiGenerationConfig$outboundSchema: z.ZodMiniType<
   stopSequences: z.optional(z.array(z.string())),
   responseMimeType: z.optional(ResponseMimeType$outboundSchema),
   responseSchema: z.optional(z.lazy(() => ResponseSchema$outboundSchema)),
+  seed: z.optional(z.int()),
+  presencePenalty: z.optional(z.number()),
+  frequencyPenalty: z.optional(z.number()),
+  responseLogprobs: z.optional(z.boolean()),
+  logprobs: z.optional(z.int()),
+  responseModalities: z.optional(z.array(ResponseModalities$outboundSchema)),
+  speechConfig: z.optional(z.lazy(() => SpeechConfig$outboundSchema)),
+  thinkingConfig: z.optional(z.lazy(() => ThinkingConfig$outboundSchema)),
+  imageConfig: z.optional(z.lazy(() => ImageConfig$outboundSchema)),
+  mediaResolution: z.optional(MediaResolution$outboundSchema),
+  responseJsonSchema: z.optional(
+    z.lazy(() => ResponseJsonSchema$outboundSchema),
+  ),
 });
 
 export function geminiGenerationConfigToJSON(

@@ -10,6 +10,10 @@ import {
   GeminiEmbedContentRequest$outboundSchema,
 } from "./geminiembedcontentrequest.js";
 
+export type EmbedContentSecurity = {
+  googApiKey: string;
+};
+
 export type EmbedContentRequest = {
   /**
    * The embedding model resource name.
@@ -20,6 +24,34 @@ export type EmbedContentRequest = {
   model: string;
   geminiEmbedContentRequest: GeminiEmbedContentRequest;
 };
+
+/** @internal */
+export type EmbedContentSecurity$Outbound = {
+  goog_api_key: string;
+};
+
+/** @internal */
+export const EmbedContentSecurity$outboundSchema: z.ZodMiniType<
+  EmbedContentSecurity$Outbound,
+  EmbedContentSecurity
+> = z.pipe(
+  z.object({
+    googApiKey: z.string(),
+  }),
+  z.transform((v) => {
+    return remap$(v, {
+      googApiKey: "goog_api_key",
+    });
+  }),
+);
+
+export function embedContentSecurityToJSON(
+  embedContentSecurity: EmbedContentSecurity,
+): string {
+  return JSON.stringify(
+    EmbedContentSecurity$outboundSchema.parse(embedContentSecurity),
+  );
+}
 
 /** @internal */
 export type EmbedContentRequest$Outbound = {

@@ -21,7 +21,7 @@ import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
+import { resolveSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as models from "../models/index.js";
 import { APICall, APIPromise } from "../types/async.js";
@@ -37,6 +37,7 @@ import { Result } from "../types/fp.js";
  */
 export function geminiBatchGenerateContent(
   client: R9SCore,
+  security: models.BatchGenerateContentSecurity,
   model: string,
   geminiBatchGenerateContentRequest: models.GeminiBatchGenerateContentRequest,
   options?: RequestOptions,
@@ -59,6 +60,7 @@ export function geminiBatchGenerateContent(
 > {
   return new APIPromise($do(
     client,
+    security,
     model,
     geminiBatchGenerateContentRequest,
     options,
@@ -67,6 +69,7 @@ export function geminiBatchGenerateContent(
 
 async function $do(
   client: R9SCore,
+  security: models.BatchGenerateContentSecurity,
   model: string,
   geminiBatchGenerateContentRequest: models.GeminiBatchGenerateContentRequest,
   options?: RequestOptions,
@@ -124,9 +127,15 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const secConfig = await extractSecurity(client._options.apiKey);
-  const securityInput = secConfig == null ? {} : { apiKey: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveSecurity(
+    [
+      {
+        fieldName: "x-goog-api-key",
+        type: "apiKey:header",
+        value: security?.googApiKey,
+      },
+    ],
+  );
 
   const context = {
     options: client._options,
@@ -136,7 +145,7 @@ async function $do(
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: client._options.apiKey,
+    securitySource: security,
     retryConfig: options?.retries
       || client._options.retryConfig
       || { strategy: "none" },

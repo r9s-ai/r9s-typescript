@@ -34,7 +34,14 @@ export class EventStream<T> extends ReadableStream<T> {
             const match = findBoundary(buffer);
             if (!match) {
               const chunk = await upstream.read();
-              if (chunk.done) return downstream.close();
+              if (chunk.done) {
+                if (buffer.length > 0) {
+                  const item = parseMessage(buffer, parse, state, dataRequired);
+                  buffer = new Uint8Array();
+                  if (item && !item.done) downstream.enqueue(item.value);
+                }
+                return downstream.close();
+              }
               buffer = concatBuffer(buffer, chunk.value);
               continue;
             }

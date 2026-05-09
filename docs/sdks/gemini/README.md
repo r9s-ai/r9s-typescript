@@ -21,12 +21,12 @@ This endpoint supports multimodal inputs (text, images, audio, video, PDFs) and 
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -60,12 +60,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -98,12 +98,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         role: "user",
@@ -148,12 +148,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         role: "user",
@@ -197,12 +197,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -236,12 +236,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -274,12 +274,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -314,12 +314,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -353,12 +353,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -402,12 +402,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -450,12 +450,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -489,12 +489,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -527,12 +527,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -576,12 +576,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -624,12 +624,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -664,12 +664,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -703,12 +703,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -740,12 +740,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -776,12 +776,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -816,12 +816,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -855,12 +855,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -894,12 +894,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -932,12 +932,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -965,12 +965,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -997,12 +997,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1037,12 +1037,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1076,12 +1076,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1115,12 +1115,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1153,12 +1153,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1193,12 +1193,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1232,12 +1232,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.generateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.generateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1278,12 +1278,12 @@ import { geminiGenerateContent } from "@r9s/sdk/funcs/geminiGenerateContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1322,6 +1322,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [models.GenerateContentSecurity](../../generatecontentsecurity.md)                                                                                                             | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |                                                                                                                                                                                |
 | `model`                                                                                                                                                                        | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The model resource name in format models/{model}.<br/>Examples: models/gemini-3-flash, models/gemini-3-pro,<br/>                                                               | models/gemini-3-flash                                                                                                                                                          |
 | `geminiGenerateContentRequest`                                                                                                                                                 | [models.GeminiGenerateContentRequest](../../models/geminigeneratecontentrequest.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |                                                                                                                                                                                |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |
@@ -1354,12 +1355,12 @@ The response is returned as Server-Sent Events (SSE) for real-time streaming.
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1389,12 +1390,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1423,12 +1424,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1465,12 +1466,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [],
@@ -1506,12 +1507,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         role: "user",
@@ -1546,12 +1547,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         role: "user",
@@ -1585,12 +1586,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1636,12 +1637,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1686,12 +1687,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1726,12 +1727,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1765,12 +1766,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1806,12 +1807,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1846,12 +1847,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.streamGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.streamGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1892,12 +1893,12 @@ import { geminiStreamGenerateContent } from "@r9s/sdk/funcs/geminiStreamGenerate
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiStreamGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiStreamGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     contents: [
       {
         parts: [
@@ -1936,6 +1937,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [models.StreamGenerateContentSecurity](../../streamgeneratecontentsecurity.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |                                                                                                                                                                                |
 | `model`                                                                                                                                                                        | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The model resource name in format models/{model}.<br/>Examples: models/gemini-3-flash, models/gemini-3-pro<br/>                                                                | models/gemini-3-flash                                                                                                                                                          |
 | `geminiGenerateContentRequest`                                                                                                                                                 | [models.GeminiGenerateContentRequest](../../models/geminigeneratecontentrequest.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |                                                                                                                                                                                |
 | `alt`                                                                                                                                                                          | [models.Alt](../../models/alt.md)                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                             | Data format for the response (use 'sse' for server-sent events)                                                                                                                |                                                                                                                                                                                |
@@ -1969,12 +1971,12 @@ Supports different task types for optimized embeddings (retrieval, similarity, c
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2001,12 +2003,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2032,12 +2034,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2064,12 +2066,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2095,12 +2097,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2128,12 +2130,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2160,12 +2162,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [],
     },
@@ -2188,12 +2190,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [],
     },
@@ -2215,12 +2217,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2247,12 +2249,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2278,12 +2280,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [],
     },
@@ -2306,12 +2308,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [],
     },
@@ -2333,12 +2335,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2365,12 +2367,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2396,12 +2398,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2428,12 +2430,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2459,12 +2461,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2492,12 +2494,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2524,12 +2526,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2556,12 +2558,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2587,12 +2589,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.embedContent("models/text-embedding-005", {
+  const result = await r9S.gemini.embedContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2618,12 +2620,12 @@ import { geminiEmbedContent } from "@r9s/sdk/funcs/geminiEmbedContent.js";
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiEmbedContent(r9S, "models/text-embedding-005", {
+  const res = await geminiEmbedContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/text-embedding-005", {
     content: {
       parts: [
         {
@@ -2647,6 +2649,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [models.EmbedContentSecurity](../../embedcontentsecurity.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |                                                                                                                                                                                |
 | `model`                                                                                                                                                                        | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The embedding model resource name.<br/>Examples: models/text-embedding-005, models/embedding-001<br/>                                                                          | models/text-embedding-005                                                                                                                                                      |
 | `geminiEmbedContentRequest`                                                                                                                                                    | [models.GeminiEmbedContentRequest](../../models/geminiembedcontentrequest.md)                                                                                                  | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |                                                                                                                                                                                |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |
@@ -2680,12 +2683,12 @@ Use GET /v1beta/batches/{name} to poll job status and retrieve results.
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-image-analysis",
       inputConfig: {
@@ -2757,12 +2760,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-image-analysis",
       inputConfig: {
@@ -2833,12 +2836,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-json-extraction",
       inputConfig: {
@@ -2863,12 +2866,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-json-extraction",
       inputConfig: {
@@ -2892,12 +2895,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-translation-job",
       inputConfig: {
@@ -2971,12 +2974,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-translation-job",
       inputConfig: {
@@ -3049,12 +3052,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-function-calling",
       inputConfig: {
@@ -3079,12 +3082,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "batch-function-calling",
       inputConfig: {
@@ -3108,12 +3111,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "large-batch-job",
       inputConfig: {
@@ -3138,12 +3141,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "large-batch-job",
       inputConfig: {
@@ -3167,12 +3170,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "my-batch-job",
       inputConfig: {
@@ -3235,12 +3238,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       displayName: "my-batch-job",
       inputConfig: {
@@ -3302,12 +3305,12 @@ run();
 ```typescript
 import { R9S } from "@r9s/sdk";
 
-const r9S = new R9S({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9S();
 
 async function run() {
-  const result = await r9S.gemini.batchGenerateContent("models/gemini-3-flash", {
+  const result = await r9S.gemini.batchGenerateContent({
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       inputConfig: {
         fileName: "files/abc123",
@@ -3331,12 +3334,12 @@ import { geminiBatchGenerateContent } from "@r9s/sdk/funcs/geminiBatchGenerateCo
 
 // Use `R9SCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const r9S = new R9SCore({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const r9S = new R9SCore();
 
 async function run() {
-  const res = await geminiBatchGenerateContent(r9S, "models/gemini-3-flash", {
+  const res = await geminiBatchGenerateContent(r9S, {
+    googApiKey: "<YOUR_API_KEY_HERE>",
+  }, "models/gemini-3-flash", {
     batch: {
       inputConfig: {
         fileName: "files/abc123",
@@ -3358,6 +3361,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `security`                                                                                                                                                                     | [models.BatchGenerateContentSecurity](../../batchgeneratecontentsecurity.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |                                                                                                                                                                                |
 | `model`                                                                                                                                                                        | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Default model for all requests in the batch                                                                                                                                    | models/gemini-3-flash                                                                                                                                                          |
 | `geminiBatchGenerateContentRequest`                                                                                                                                            | [models.GeminiBatchGenerateContentRequest](../../models/geminibatchgeneratecontentrequest.md)                                                                                  | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |                                                                                                                                                                                |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |

@@ -20,12 +20,14 @@ export class Gemini extends ClientSDK {
    * This endpoint supports multimodal inputs (text, images, audio, video, PDFs) and conversation history.
    */
   async generateContent(
+    security: models.GenerateContentSecurity,
     model: string,
     geminiGenerateContentRequest: models.GeminiGenerateContentRequest,
     options?: RequestOptions,
   ): Promise<models.GeminiGenerateContentResponse> {
     return unwrapAsync(geminiGenerateContent(
       this,
+      security,
       model,
       geminiGenerateContentRequest,
       options,
@@ -40,6 +42,7 @@ export class Gemini extends ClientSDK {
    * The response is returned as Server-Sent Events (SSE) for real-time streaming.
    */
   async streamGenerateContent(
+    security: models.StreamGenerateContentSecurity,
     model: string,
     geminiGenerateContentRequest: models.GeminiGenerateContentRequest,
     alt?: models.Alt | undefined,
@@ -47,6 +50,7 @@ export class Gemini extends ClientSDK {
   ): Promise<EventStream<models.GeminiGenerateContentResponse>> {
     return unwrapAsync(geminiStreamGenerateContent(
       this,
+      security,
       model,
       geminiGenerateContentRequest,
       alt,
@@ -62,12 +66,14 @@ export class Gemini extends ClientSDK {
    * Supports different task types for optimized embeddings (retrieval, similarity, classification, etc.).
    */
   async embedContent(
+    security: models.EmbedContentSecurity,
     model: string,
     geminiEmbedContentRequest: models.GeminiEmbedContentRequest,
     options?: RequestOptions,
   ): Promise<models.GeminiEmbedContentResponse> {
     return unwrapAsync(geminiEmbedContent(
       this,
+      security,
       model,
       geminiEmbedContentRequest,
       options,
@@ -83,12 +89,14 @@ export class Gemini extends ClientSDK {
    * Use GET /v1beta/batches/{name} to poll job status and retrieve results.
    */
   async batchGenerateContent(
+    security: models.BatchGenerateContentSecurity,
     model: string,
     geminiBatchGenerateContentRequest: models.GeminiBatchGenerateContentRequest,
     options?: RequestOptions,
   ): Promise<models.GeminiBatchGenerateContentResponse> {
     return unwrapAsync(geminiBatchGenerateContent(
       this,
+      security,
       model,
       geminiBatchGenerateContentRequest,
       options,

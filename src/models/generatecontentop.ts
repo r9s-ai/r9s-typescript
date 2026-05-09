@@ -10,6 +10,10 @@ import {
   GeminiGenerateContentRequest$outboundSchema,
 } from "./geminigeneratecontentrequest.js";
 
+export type GenerateContentSecurity = {
+  googApiKey: string;
+};
+
 export type GenerateContentRequest = {
   /**
    * The model resource name in format models/{model}.
@@ -20,6 +24,34 @@ export type GenerateContentRequest = {
   model: string;
   geminiGenerateContentRequest: GeminiGenerateContentRequest;
 };
+
+/** @internal */
+export type GenerateContentSecurity$Outbound = {
+  goog_api_key: string;
+};
+
+/** @internal */
+export const GenerateContentSecurity$outboundSchema: z.ZodMiniType<
+  GenerateContentSecurity$Outbound,
+  GenerateContentSecurity
+> = z.pipe(
+  z.object({
+    googApiKey: z.string(),
+  }),
+  z.transform((v) => {
+    return remap$(v, {
+      googApiKey: "goog_api_key",
+    });
+  }),
+);
+
+export function generateContentSecurityToJSON(
+  generateContentSecurity: GenerateContentSecurity,
+): string {
+  return JSON.stringify(
+    GenerateContentSecurity$outboundSchema.parse(generateContentSecurity),
+  );
+}
 
 /** @internal */
 export type GenerateContentRequest$Outbound = {

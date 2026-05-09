@@ -10,6 +10,10 @@ import {
   GeminiBatchGenerateContentRequest$outboundSchema,
 } from "./geminibatchgeneratecontentrequest.js";
 
+export type BatchGenerateContentSecurity = {
+  googApiKey: string;
+};
+
 export type BatchGenerateContentRequest = {
   /**
    * Default model for all requests in the batch
@@ -17,6 +21,36 @@ export type BatchGenerateContentRequest = {
   model: string;
   geminiBatchGenerateContentRequest: GeminiBatchGenerateContentRequest;
 };
+
+/** @internal */
+export type BatchGenerateContentSecurity$Outbound = {
+  goog_api_key: string;
+};
+
+/** @internal */
+export const BatchGenerateContentSecurity$outboundSchema: z.ZodMiniType<
+  BatchGenerateContentSecurity$Outbound,
+  BatchGenerateContentSecurity
+> = z.pipe(
+  z.object({
+    googApiKey: z.string(),
+  }),
+  z.transform((v) => {
+    return remap$(v, {
+      googApiKey: "goog_api_key",
+    });
+  }),
+);
+
+export function batchGenerateContentSecurityToJSON(
+  batchGenerateContentSecurity: BatchGenerateContentSecurity,
+): string {
+  return JSON.stringify(
+    BatchGenerateContentSecurity$outboundSchema.parse(
+      batchGenerateContentSecurity,
+    ),
+  );
+}
 
 /** @internal */
 export type BatchGenerateContentRequest$Outbound = {

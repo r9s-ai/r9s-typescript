@@ -5,13 +5,11 @@
 ```typescript
 import { Security } from "@r9s/sdk/models";
 
-let value: Security = {
-  apiKey: "<value>",
-};
+let value: Security = {};
 ```
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
+| `apiKey`           | *string*           | :heavy_minus_sign: | N/A                |

@@ -135,7 +135,7 @@ python:
   templateVersion: v2
   unionType: both
 typescript:
-  version: 0.7.2
+  version: 0.8.1
   acceptHeaderEnum: false
   additionalDependencies:
     dependencies: {}
