@@ -19,7 +19,7 @@ import { Usage, Usage$inboundSchema } from "./usage.js";
  */
 export type ChatCompletionStreamEvent = {
   id: string;
-  object: "chat.completion.chunk";
+  object: string;
   /**
    * Unix timestamp
    */
@@ -40,7 +40,7 @@ export const ChatCompletionStreamEvent$inboundSchema: z.ZodMiniType<
 > = z.pipe(
   z.object({
     id: types.string(),
-    object: types.literal("chat.completion.chunk"),
+    object: types.string(),
     created: types.number(),
     model: types.string(),
     choices: z.array(ChatCompletionStreamChoice$inboundSchema),

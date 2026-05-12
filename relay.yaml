@@ -15,7 +15,7 @@ security:
   - api_key: []
 
 paths:
-  /v1/models:
+  /models:
     get:
       operationId: listModels
       x-speakeasy-name-override: list
@@ -60,7 +60,7 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
-  /v1/models/{model}:
+  /models/{model}:
     get:
       operationId: retrieveModel
       x-speakeasy-name-override: retrieve
@@ -97,7 +97,7 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
-  /v1/chat/completions:
+  /chat/completions:
     post:
       operationId: createChatCompletion
       x-speakeasy-name-override: create
@@ -415,7 +415,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/responses:
+  /responses:
     post:
       operationId: createResponse
       x-speakeasy-name-override: create
@@ -910,7 +910,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/messages:
+  /messages:
     post:
       operationId: createMessage
       x-speakeasy-name-override: create
@@ -1242,7 +1242,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/completions:
+  /completions:
     post:
       operationId: createCompletion
       x-speakeasy-name-override: create
@@ -1407,7 +1407,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/images/generations:
+  /images/generations:
     post:
       operationId: createImageGeneration
       x-speakeasy-name-override: create
@@ -1488,7 +1488,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/images/edits:
+  /images/edits:
     post:
       operationId: createImageEdit
       x-speakeasy-name-override: createEdit
@@ -1592,7 +1592,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/embeddings:
+  /embeddings:
     post:
       operationId: createEmbedding
       x-speakeasy-name-override: create
@@ -1725,7 +1725,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/moderations:
+  /moderations:
     post:
       operationId: createModeration
       x-speakeasy-name-override: create
@@ -1808,7 +1808,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/audio/speech:
+  /audio/speech:
     post:
       operationId: createAudioSpeech
       x-speakeasy-name-override: speech
@@ -1888,7 +1888,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/audio/transcriptions:
+  /audio/transcriptions:
     post:
       operationId: createAudioTranscription
       x-speakeasy-name-override: transcribe
@@ -1967,7 +1967,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /v1/audio/translations:
+  /audio/translations:
     post:
       operationId: createAudioTranslation
       x-speakeasy-name-override: translate
@@ -3628,7 +3628,6 @@ components:
           type: string
         object:
           type: string
-          const: chat.completion.chunk
         created:
           type: integer
           description: Unix timestamp

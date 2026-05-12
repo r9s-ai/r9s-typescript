@@ -14,7 +14,7 @@ Convert text to speech
 
 ### Example Usage: detailed
 
-<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/v1/audio/speech" example="detailed" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/audio/speech" example="detailed" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -67,7 +67,7 @@ run();
 ```
 ### Example Usage: fast_briefing
 
-<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/v1/audio/speech" example="fast_briefing" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/audio/speech" example="fast_briefing" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -124,7 +124,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/v1/audio/speech" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioSpeech" method="post" path="/audio/speech" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -215,7 +215,7 @@ Transcribe speech to text. Supports multiple models and output formats.
 
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/v1/audio/transcriptions" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/audio/transcriptions" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -268,7 +268,7 @@ run();
 ```
 ### Example Usage: timestamps
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/v1/audio/transcriptions" example="timestamps" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/audio/transcriptions" example="timestamps" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -331,7 +331,7 @@ run();
 ```
 ### Example Usage: with_options
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/v1/audio/transcriptions" example="with_options" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranscription" method="post" path="/audio/transcriptions" example="with_options" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -422,7 +422,7 @@ Translate speech from any supported language to English text.
 
 ### Example Usage: meeting_notes
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/v1/audio/translations" example="meeting_notes" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/audio/translations" example="meeting_notes" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -479,7 +479,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/v1/audio/translations" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/audio/translations" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -532,7 +532,7 @@ run();
 ```
 ### Example Usage: with_prompt
 
-<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/v1/audio/translations" example="with_prompt" -->
+<!-- UsageSnippet language="typescript" operationID="createAudioTranslation" method="post" path="/audio/translations" example="with_prompt" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";

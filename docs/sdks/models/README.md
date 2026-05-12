@@ -13,7 +13,7 @@ List all available models
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listModels" method="get" path="/v1/models" -->
+<!-- UsageSnippet language="typescript" operationID="listModels" method="get" path="/models" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -84,7 +84,7 @@ Retrieve detailed information for a specified model
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="retrieveModel" method="get" path="/v1/models/{model}" -->
+<!-- UsageSnippet language="typescript" operationID="retrieveModel" method="get" path="/models/{model}" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

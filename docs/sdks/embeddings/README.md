@@ -12,7 +12,7 @@ Create embedding vector representations for input text
 
 ### Example Usage: base64_embedding
 
-<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/v1/embeddings" example="base64_embedding" -->
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="base64_embedding" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -67,7 +67,7 @@ run();
 ```
 ### Example Usage: multiple
 
-<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/v1/embeddings" example="multiple" -->
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="multiple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -126,7 +126,7 @@ run();
 ```
 ### Example Usage: single
 
-<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/v1/embeddings" example="single" -->
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="single" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

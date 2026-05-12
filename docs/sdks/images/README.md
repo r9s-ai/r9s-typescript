@@ -13,7 +13,7 @@ Generate images from text prompts
 
 ### Example Usage: base64_output
 
-<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/v1/images/generations" example="base64_output" -->
+<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/images/generations" example="base64_output" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -70,7 +70,7 @@ run();
 ```
 ### Example Usage: detailed
 
-<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/v1/images/generations" example="detailed" -->
+<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/images/generations" example="detailed" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -129,7 +129,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/v1/images/generations" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createImageGeneration" method="post" path="/images/generations" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -215,7 +215,7 @@ Create an edited or extended image given an original and prompt
 
 ### Example Usage: gpt_image_edit
 
-<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/v1/images/edits" example="gpt_image_edit" -->
+<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/images/edits" example="gpt_image_edit" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -281,7 +281,7 @@ run();
 ```
 ### Example Usage: gpt_image_streaming
 
-<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/v1/images/edits" example="gpt_image_streaming" -->
+<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/images/edits" example="gpt_image_streaming" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -346,7 +346,7 @@ run();
 ```
 ### Example Usage: multiple_images_edit
 
-<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/v1/images/edits" example="multiple_images_edit" -->
+<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/images/edits" example="multiple_images_edit" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -405,7 +405,7 @@ run();
 ```
 ### Example Usage: simple_edit_dalle2
 
-<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/v1/images/edits" example="simple_edit_dalle2" -->
+<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/images/edits" example="simple_edit_dalle2" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";
@@ -465,7 +465,7 @@ run();
 ```
 ### Example Usage: with_mask_dalle2
 
-<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/v1/images/edits" example="with_mask_dalle2" -->
+<!-- UsageSnippet language="typescript" operationID="createImageEdit" method="post" path="/images/edits" example="with_mask_dalle2" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 import { openAsBlob } from "node:fs";

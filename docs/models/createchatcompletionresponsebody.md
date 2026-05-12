@@ -10,7 +10,7 @@ import { CreateChatCompletionResponseBody } from "@r9s/sdk/models";
 let value: CreateChatCompletionResponseBody = {
   data: {
     id: "<id>",
-    object: "chat.completion.chunk",
+    object: "<value>",
     created: 939288,
     model: "Grand Caravan",
     choices: [

@@ -9,7 +9,7 @@ import { ChatCompletionStreamEvent } from "@r9s/sdk/models";
 
 let value: ChatCompletionStreamEvent = {
   id: "<id>",
-  object: "chat.completion.chunk",
+  object: "<value>",
   created: 336381,
   model: "Land Cruiser",
   choices: [
@@ -26,7 +26,7 @@ let value: ChatCompletionStreamEvent = {
 | Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
-| `object`                                                                                  | *"chat.completion.chunk"*                                                                 | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `object`                                                                                  | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `created`                                                                                 | *number*                                                                                  | :heavy_check_mark:                                                                        | Unix timestamp                                                                            |
 | `model`                                                                                   | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `choices`                                                                                 | [models.ChatCompletionStreamChoice](../models/chatcompletionstreamchoice.md)[]            | :heavy_check_mark:                                                                        | Array of completion choices. May be empty in the final chunk when only usage is returned. |

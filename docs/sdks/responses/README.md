@@ -13,7 +13,7 @@ Create a response with streaming support. This endpoint corresponds to OpenAI's 
 
 ### Example Usage: background_response
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="background_response" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="background_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -64,7 +64,7 @@ run();
 ```
 ### Example Usage: background_task
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="background_task" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="background_task" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -123,7 +123,7 @@ run();
 ```
 ### Example Usage: chained_conversation
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="chained_conversation" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="chained_conversation" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -180,7 +180,7 @@ run();
 ```
 ### Example Usage: failed_response
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="failed_response" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="failed_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -231,7 +231,7 @@ run();
 ```
 ### Example Usage: incomplete_response
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="incomplete_response" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="incomplete_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -282,7 +282,7 @@ run();
 ```
 ### Example Usage: json_mode
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="json_mode" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="json_mode" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -347,7 +347,7 @@ run();
 ```
 ### Example Usage: json_output_response
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="json_output_response" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="json_output_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -398,7 +398,7 @@ run();
 ```
 ### Example Usage: json_schema
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="json_schema" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="json_schema" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -529,7 +529,7 @@ run();
 ```
 ### Example Usage: multi_tool_call
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="multi_tool_call" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="multi_tool_call" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -692,7 +692,7 @@ run();
 ```
 ### Example Usage: multi_turn_conversation
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="multi_turn_conversation" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="multi_turn_conversation" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -775,7 +775,7 @@ run();
 ```
 ### Example Usage: reasoning_mode
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="reasoning_mode" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="reasoning_mode" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -836,7 +836,7 @@ run();
 ```
 ### Example Usage: required_tool
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="required_tool" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="required_tool" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -935,7 +935,7 @@ run();
 ```
 ### Example Usage: response_with_tool_calls
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="response_with_tool_calls" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="response_with_tool_calls" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -986,7 +986,7 @@ run();
 ```
 ### Example Usage: simple_streaming
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="simple_streaming" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="simple_streaming" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1045,7 +1045,7 @@ run();
 ```
 ### Example Usage: simple_string
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="simple_string" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="simple_string" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1102,7 +1102,7 @@ run();
 ```
 ### Example Usage: simple_text_response
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="simple_text_response" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="simple_text_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1153,7 +1153,7 @@ run();
 ```
 ### Example Usage: streaming_with_tools
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="streaming_with_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="streaming_with_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1258,7 +1258,7 @@ run();
 ```
 ### Example Usage: tool_result_flow
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="tool_result_flow" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="tool_result_flow" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1339,7 +1339,7 @@ run();
 ```
 ### Example Usage: with_messages
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="with_messages" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="with_messages" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1404,7 +1404,7 @@ run();
 ```
 ### Example Usage: with_metadata
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="with_metadata" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="with_metadata" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1473,7 +1473,7 @@ run();
 ```
 ### Example Usage: with_tools
 
-<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/v1/responses" example="with_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createResponse" method="post" path="/responses" example="with_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

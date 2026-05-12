@@ -12,7 +12,7 @@ Create a text completion, supports streaming
 
 ### Example Usage: code_completion
 
-<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/v1/completions" example="code_completion" -->
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="code_completion" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -69,7 +69,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/v1/completions" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -122,7 +122,7 @@ run();
 ```
 ### Example Usage: streaming
 
-<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/v1/completions" example="streaming" -->
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="streaming" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -183,7 +183,7 @@ run();
 ```
 ### Example Usage: with_options
 
-<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/v1/completions" example="with_options" -->
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="with_options" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

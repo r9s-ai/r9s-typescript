@@ -12,7 +12,7 @@ Create a chat completion, supports streaming
 
 ### Example Usage: basic
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="basic" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="basic" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -73,7 +73,7 @@ run();
 ```
 ### Example Usage: forced_tool_call
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="forced_tool_call" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="forced_tool_call" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -216,7 +216,7 @@ run();
 ```
 ### Example Usage: multi_turn
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="multi_turn" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="multi_turn" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -305,7 +305,7 @@ run();
 ```
 ### Example Usage: parallel_tools
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="parallel_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="parallel_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -410,7 +410,7 @@ run();
 ```
 ### Example Usage: streaming
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="streaming" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="streaming" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -475,7 +475,7 @@ run();
 ```
 ### Example Usage: tool_response
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="tool_response" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="tool_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -628,7 +628,7 @@ run();
 ```
 ### Example Usage: with_audio_output
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_audio_output" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_audio_output" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -707,7 +707,7 @@ run();
 ```
 ### Example Usage: with_json_mode
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_json_mode" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_json_mode" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -784,7 +784,7 @@ run();
 ```
 ### Example Usage: with_json_schema
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_json_schema" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_json_schema" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -909,7 +909,7 @@ run();
 ```
 ### Example Usage: with_metadata
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_metadata" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_metadata" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -990,7 +990,7 @@ run();
 ```
 ### Example Usage: with_reasoning
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_reasoning" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_reasoning" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1057,7 +1057,7 @@ run();
 ```
 ### Example Usage: with_system
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_system" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_system" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1130,7 +1130,7 @@ run();
 ```
 ### Example Usage: with_tools
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1253,7 +1253,7 @@ run();
 ```
 ### Example Usage: with_vision
 
-<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/v1/chat/completions" example="with_vision" -->
+<!-- UsageSnippet language="typescript" operationID="createChatCompletion" method="post" path="/chat/completions" example="with_vision" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

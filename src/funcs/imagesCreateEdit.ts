@@ -270,7 +270,7 @@ async function $do(
     appendForm(body, "user", payload.user);
   }
 
-  const path = pathToFunc("/v1/images/edits")();
+  const path = pathToFunc("/images/edits")();
 
   const headers = new Headers(compactMap({
     Accept: request?.stream ? "text/event-stream" : "application/json",

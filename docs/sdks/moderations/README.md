@@ -12,7 +12,7 @@ Perform content moderation on input text, detecting potentially harmful content
 
 ### Example Usage: multiple
 
-<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="multiple" -->
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/moderations" example="multiple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -67,7 +67,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/moderations" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -116,7 +116,7 @@ run();
 ```
 ### Example Usage: user_generated_content
 
-<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/v1/moderations" example="user_generated_content" -->
+<!-- UsageSnippet language="typescript" operationID="createModeration" method="post" path="/moderations" example="user_generated_content" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

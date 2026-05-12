@@ -149,7 +149,7 @@ async function $do(
     appendForm(body, "temperature", payload.temperature);
   }
 
-  const path = pathToFunc("/v1/audio/translations")();
+  const path = pathToFunc("/audio/translations")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json;q=1, text/plain;q=0",

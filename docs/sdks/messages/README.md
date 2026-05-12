@@ -12,7 +12,7 @@ Create a message using Anthropic Claude's native API format, supports streaming
 
 ### Example Usage: complex_conversation
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="complex_conversation" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="complex_conversation" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -171,7 +171,7 @@ run();
 ```
 ### Example Usage: multi_turn_with_tools
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="multi_turn_with_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="multi_turn_with_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -380,7 +380,7 @@ run();
 ```
 ### Example Usage: simple
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="simple" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -453,7 +453,7 @@ run();
 ```
 ### Example Usage: specific_tool
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="specific_tool" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="specific_tool" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -582,7 +582,7 @@ run();
 ```
 ### Example Usage: stop_sequences
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="stop_sequences" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="stop_sequences" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -665,7 +665,7 @@ run();
 ```
 ### Example Usage: streaming
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="streaming" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="streaming" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -744,7 +744,7 @@ run();
 ```
 ### Example Usage: tool_use_response
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="tool_use_response" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="tool_use_response" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -891,7 +891,7 @@ run();
 ```
 ### Example Usage: with_system
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="with_system" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="with_system" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -968,7 +968,7 @@ run();
 ```
 ### Example Usage: with_tools
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="with_tools" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="with_tools" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -1093,7 +1093,7 @@ run();
 ```
 ### Example Usage: with_vision
 
-<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/v1/messages" example="with_vision" -->
+<!-- UsageSnippet language="typescript" operationID="createMessage" method="post" path="/messages" example="with_vision" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

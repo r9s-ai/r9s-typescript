@@ -102,7 +102,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/audio/speech")();
+  const path = pathToFunc("/audio/speech")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
