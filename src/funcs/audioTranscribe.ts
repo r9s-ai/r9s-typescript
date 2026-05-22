@@ -161,7 +161,7 @@ async function $do(
     );
   }
 
-  const path = pathToFunc("/audio/transcriptions")();
+  const path = pathToFunc("/v1/audio/transcriptions")();
 
   const headers = new Headers(compactMap({
     Accept:

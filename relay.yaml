@@ -8,14 +8,14 @@ info:
     url: https://opensource.org/licenses/MIT
 
 servers:
-  - url: "https://api.r9s.ai/v1"
+  - url: "https://api.r9s.ai"
     description: Production Server
 
 security:
   - api_key: []
 
 paths:
-  /models:
+  /v1/models:
     get:
       operationId: listModels
       x-speakeasy-name-override: list
@@ -60,7 +60,7 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
-  /models/{model}:
+  /v1/models/{model}:
     get:
       operationId: retrieveModel
       x-speakeasy-name-override: retrieve
@@ -97,7 +97,7 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
-  /chat/completions:
+  /v1/chat/completions:
     post:
       operationId: createChatCompletion
       x-speakeasy-name-override: create
@@ -415,7 +415,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /responses:
+  /v1/responses:
     post:
       operationId: createResponse
       x-speakeasy-name-override: create
@@ -910,7 +910,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /messages:
+  /v1/messages:
     post:
       operationId: createMessage
       x-speakeasy-name-override: create
@@ -1242,7 +1242,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /completions:
+  /v1/completions:
     post:
       operationId: createCompletion
       x-speakeasy-name-override: create
@@ -1407,7 +1407,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /images/generations:
+  /v1/images/generations:
     post:
       operationId: createImageGeneration
       x-speakeasy-name-override: create
@@ -1488,7 +1488,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /images/edits:
+  /v1/images/edits:
     post:
       operationId: createImageEdit
       x-speakeasy-name-override: createEdit
@@ -1592,7 +1592,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /embeddings:
+  /v1/embeddings:
     post:
       operationId: createEmbedding
       x-speakeasy-name-override: create
@@ -1725,7 +1725,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /moderations:
+  /v1/moderations:
     post:
       operationId: createModeration
       x-speakeasy-name-override: create
@@ -1808,7 +1808,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /audio/speech:
+  /v1/audio/speech:
     post:
       operationId: createAudioSpeech
       x-speakeasy-name-override: speech
@@ -1888,7 +1888,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /audio/transcriptions:
+  /v1/audio/transcriptions:
     post:
       operationId: createAudioTranscription
       x-speakeasy-name-override: transcribe
@@ -1967,7 +1967,7 @@ paths:
         '503':
           $ref: '#/components/responses/ServiceUnavailableError'
 
-  /audio/translations:
+  /v1/audio/translations:
     post:
       operationId: createAudioTranslation
       x-speakeasy-name-override: translate

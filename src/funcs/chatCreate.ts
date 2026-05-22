@@ -180,7 +180,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/chat/completions")();
+  const path = pathToFunc("/v1/chat/completions")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",

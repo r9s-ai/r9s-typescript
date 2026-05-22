@@ -14,7 +14,7 @@ export const ServerList = [
   /**
    * Production Server
    */
-  "https://api.r9s.ai/v1",
+  "https://api.r9s.ai",
 ] as const;
 
 export type SDKOptions = {

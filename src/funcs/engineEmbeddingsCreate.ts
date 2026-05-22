@@ -121,7 +121,7 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/engines/{model}/embeddings")(pathParams);
+  const path = pathToFunc("/v1/engines/{model}/embeddings")(pathParams);
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
