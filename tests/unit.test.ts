@@ -5,23 +5,41 @@ import { ImageEditRequest$outboundSchema } from "../src/models/imageeditrequest.
 import { GeminiGenerateContentRequest$outboundSchema } from "../src/models/geminigeneratecontentrequest.js";
 import { ServerList } from "../src/lib/config.js";
 
+function buildURL(base: string, path: string): string {
+  const baseURL = new URL(base);
+  baseURL.pathname = baseURL.pathname.replace(/\/+$/, "") + "/";
+  const resolvedPath = path.replace(/^\/+/, "");
+  return new URL(resolvedPath, baseURL).href;
+}
+
 describe("Base URL", () => {
   it("should not contain /v1 suffix", () => {
     expect(ServerList[0]).toBe("https://api.r9s.ai");
   });
 
-  it("chat completions path should include /v1", () => {
-    const path = "/v1/chat/completions";
-    const url = new URL(path, ServerList[0] + "/");
-    expect(url.pathname).toBe("/v1/chat/completions");
+  it("default base + chat path assembles correctly", () => {
+    expect(buildURL("https://api.r9s.ai", "/v1/chat/completions"))
+      .toBe("https://api.r9s.ai/v1/chat/completions");
+  });
+
+  it("base with trailing slash assembles correctly", () => {
+    expect(buildURL("https://api.r9s.ai/", "/v1/chat/completions"))
+      .toBe("https://api.r9s.ai/v1/chat/completions");
+  });
+
+  it("custom proxy base preserves path prefix", () => {
+    expect(buildURL("https://proxy.example.com/r9s", "/v1/chat/completions"))
+      .toBe("https://proxy.example.com/r9s/v1/chat/completions");
   });
 
   it("Gemini path should assemble correctly without double v1", () => {
-    const path = "/v1beta/models/gemini-3-flash:generateContent";
-    const base = new URL(ServerList[0] + "/");
-    const url = new URL(path, base);
-    expect(url.href).toBe("https://api.r9s.ai/v1beta/models/gemini-3-flash:generateContent");
-    expect(url.href).not.toContain("/v1/v1beta");
+    expect(buildURL("https://api.r9s.ai", "/v1beta/models/gemini-3-flash:generateContent"))
+      .toBe("https://api.r9s.ai/v1beta/models/gemini-3-flash:generateContent");
+  });
+
+  it("Gemini path should not contain /v1/v1beta", () => {
+    expect(buildURL("https://api.r9s.ai", "/v1beta/models/gemini-3-flash:generateContent"))
+      .not.toContain("/v1/v1beta");
   });
 });
 
