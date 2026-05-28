@@ -6,12 +6,12 @@ import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../lib/primitives.js";
 
 export type Security = {
-  apiKey: string;
+  apiKey?: string | undefined;
 };
 
 /** @internal */
 export type Security$Outbound = {
-  api_key: string;
+  api_key?: string | undefined;
 };
 
 /** @internal */
@@ -20,7 +20,7 @@ export const Security$outboundSchema: z.ZodMiniType<
   Security
 > = z.pipe(
   z.object({
-    apiKey: z.string(),
+    apiKey: z.optional(z.string()),
   }),
   z.transform((v) => {
     return remap$(v, {

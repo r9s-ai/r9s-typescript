@@ -8,11 +8,11 @@ Who is paying for this response
 import { Payer } from "@r9s/sdk/models";
 
 let value: Payer = "developer";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "developer" | "organization" | Unrecognized<string>

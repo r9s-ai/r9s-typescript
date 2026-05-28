@@ -16,6 +16,8 @@ import { R9SError } from "../errors/r9serror.js";
 import { ResponseValidationError } from "../errors/responsevalidationerror.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { encodeJSON } from "../lib/encodings.js";
+import { EventStream } from "../lib/event-streams.js";
+import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -34,11 +36,83 @@ import { Result } from "../types/fp.js";
  */
 export function imagesCreate(
   client: R9SCore,
-  request: models.ImageGenerationRequest,
+  request: models.ImageGenerationRequest & { stream?: false },
   options?: RequestOptions,
 ): APIPromise<
   Result<
     models.ImageGenerationResponse,
+    | errors.BadRequestError
+    | errors.AuthenticationError
+    | errors.PermissionDeniedError
+    | errors.UnprocessableEntityError
+    | errors.RateLimitError
+    | errors.InternalServerError
+    | errors.ServiceUnavailableError
+    | R9SError
+    | ResponseValidationError
+    | ConnectionError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
+  >
+>;
+export function imagesCreate(
+  client: R9SCore,
+  request: models.ImageGenerationRequest & { stream: true },
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    EventStream<models.ImageGenerationStreamEvent>,
+    | errors.BadRequestError
+    | errors.AuthenticationError
+    | errors.PermissionDeniedError
+    | errors.UnprocessableEntityError
+    | errors.RateLimitError
+    | errors.InternalServerError
+    | errors.ServiceUnavailableError
+    | R9SError
+    | ResponseValidationError
+    | ConnectionError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
+  >
+>;
+export function imagesCreate(
+  client: R9SCore,
+  request: models.ImageGenerationRequest,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    models.CreateImageGenerationResponse,
+    | errors.BadRequestError
+    | errors.AuthenticationError
+    | errors.PermissionDeniedError
+    | errors.UnprocessableEntityError
+    | errors.RateLimitError
+    | errors.InternalServerError
+    | errors.ServiceUnavailableError
+    | R9SError
+    | ResponseValidationError
+    | ConnectionError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
+  >
+>;
+export function imagesCreate(
+  client: R9SCore,
+  request: models.ImageGenerationRequest,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    models.CreateImageGenerationResponse,
     | errors.BadRequestError
     | errors.AuthenticationError
     | errors.PermissionDeniedError
@@ -70,7 +144,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      models.ImageGenerationResponse,
+      models.CreateImageGenerationResponse,
       | errors.BadRequestError
       | errors.AuthenticationError
       | errors.PermissionDeniedError
@@ -101,11 +175,11 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/images/generations")();
+  const path = pathToFunc("/v1/images/generations")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: request?.stream ? "text/event-stream" : "application/json",
   }));
 
   const secConfig = await extractSecurity(client._options.apiKey);
@@ -144,7 +218,8 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "401", "403", "422", "429", "4XX", "500", "503", "5XX"],
+    isErrorStatusCode: (statusCode: number) =>
+      matchStatusCode({ status: statusCode } as Response, ["4XX", "5XX"]),
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -158,7 +233,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    models.ImageGenerationResponse,
+    models.CreateImageGenerationResponse,
     | errors.BadRequestError
     | errors.AuthenticationError
     | errors.PermissionDeniedError
@@ -175,7 +250,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, models.ImageGenerationResponse$inboundSchema),
+    M.json(200, models.CreateImageGenerationResponse$inboundSchema),
+    M.sse(200, models.CreateImageGenerationResponse$inboundSchema),
     M.jsonErr(400, errors.BadRequestError$inboundSchema),
     M.jsonErr(401, errors.AuthenticationError$inboundSchema),
     M.jsonErr(403, errors.PermissionDeniedError$inboundSchema),

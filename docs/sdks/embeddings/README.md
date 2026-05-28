@@ -1,5 +1,4 @@
 # Embeddings
-(*embeddings*)
 
 ## Overview
 
@@ -11,9 +10,123 @@
 
 Create embedding vector representations for input text
 
-### Example Usage
+### Example Usage: base64_embedding
 
-<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" -->
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="base64_embedding" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.embeddings.create({
+    model: "gpt-4o-mini",
+    input: "Convert this to an embedding.",
+    encodingFormat: "base64",
+    dimensions: 256,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { embeddingsCreate } from "@r9s/sdk/funcs/embeddingsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await embeddingsCreate(r9S, {
+    model: "gpt-4o-mini",
+    input: "Convert this to an embedding.",
+    encodingFormat: "base64",
+    dimensions: 256,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("embeddingsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: multiple
+
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="multiple" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.embeddings.create({
+    model: "qwen-plus",
+    input: [
+      "Hello world",
+      "Goodbye world",
+      "How are you?",
+    ],
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { embeddingsCreate } from "@r9s/sdk/funcs/embeddingsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await embeddingsCreate(r9S, {
+    model: "qwen-plus",
+    input: [
+      "Hello world",
+      "Goodbye world",
+      "How are you?",
+    ],
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("embeddingsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: single
+
+<!-- UsageSnippet language="typescript" operationID="createEmbedding" method="post" path="/embeddings" example="single" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 

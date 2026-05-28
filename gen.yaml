@@ -12,6 +12,8 @@ generation:
     requestResponseComponentNamesFeb2024: false
     securityFeb2025: false
     sharedErrorComponentsApr2025: false
+    sharedNestedComponentsJan2026: false
+    nameOverrideFeb2026: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
@@ -21,16 +23,20 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  versioningStrategy: automatic
+  persistentEdits: {}
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
-  persistentEdits: {}
 go:
   version: 0.5.0
   additionalDependencies:
+    dependencies: {}
     dev: {}
+    devDependencies: {}
     main: {}
+    peerDependencies: {}
   allowedRedefinedBuiltins: []
   asyncMode: sync
   authors:
@@ -75,8 +81,11 @@ go:
 python:
   version: 0.5.0
   additionalDependencies:
+    dependencies: {}
     dev: {}
+    devDependencies: {}
     main: {}
+    peerDependencies: {}
   allowedRedefinedBuiltins:
     - id
     - object
@@ -126,11 +135,14 @@ python:
   templateVersion: v2
   unionType: both
 typescript:
-  version: 0.5.0
+  version: 0.8.3
   acceptHeaderEnum: false
   additionalDependencies:
+    dependencies: {}
     dev: {}
+    devDependencies: {}
     main: {}
+    peerDependencies: {}
   additionalPackageJSON: {}
   additionalScripts: {}
   allowUnknownFieldsInWeakUnions: false
@@ -152,9 +164,11 @@ typescript:
   enableReactQuery: false
   enumFormat: union
   exportZodModelNamespace: false
+  fixEnumNameSanitization: false
   fixFlags:
     asyncPaginationSep2025: true
     responseRequiredSep2024: true
+  flatAdditionalProperties: false
   flattenGlobalSecurity: true
   flattenRequests: true
   flatteningOrder: parameters-first
@@ -174,6 +188,7 @@ typescript:
   inputModelSuffix: input
   jsonpath: rfc9535
   laxMode: lax
+  legacyFileNaming: true
   license: MIT
   maxMethodParams: 999
   methodArguments: infer-optional-args
@@ -188,6 +203,7 @@ typescript:
   packageManager: npm
   packageName: '@r9s/sdk'
   preApplyUnionDiscriminators: true
+  preserveModelFieldNames: false
   responseFormat: flat
   retries:
     backoffStrategy: backoff
@@ -200,4 +216,6 @@ typescript:
   unionType: both
   usageSDKInitImports: []
   useIndexModules: true
+  useOxlint: false
+  useTsgo: false
   zodVersion: v4-mini

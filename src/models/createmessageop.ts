@@ -81,6 +81,7 @@ export const CreateMessageResponse$inboundSchema: z.ZodMiniType<
     z.transform(stream => {
       return new EventStream(stream, rawEvent => {
         return {
+          done: false,
           value: z.parse(
             z.lazy(() => CreateMessageResponseBody$inboundSchema),
             rawEvent,

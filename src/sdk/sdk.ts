@@ -9,6 +9,7 @@ import { Completions } from "./completions.js";
 import { Edits } from "./edits.js";
 import { Embeddings } from "./embeddings.js";
 import { EngineEmbeddings } from "./engineembeddings.js";
+import { Gemini } from "./gemini.js";
 import { Images } from "./images.js";
 import { Messages } from "./messages.js";
 import { Models } from "./models.js";
@@ -68,9 +69,9 @@ export class R9S extends ClientSDK {
     return (this._moderations ??= new Moderations(this._options));
   }
 
-  private _audioSDK?: AudioSDK;
-  get audioSDK(): AudioSDK {
-    return (this._audioSDK ??= new AudioSDK(this._options));
+  private _audio?: AudioSDK;
+  get audio(): AudioSDK {
+    return (this._audio ??= new AudioSDK(this._options));
   }
 
   private _search?: Search;
@@ -81,5 +82,10 @@ export class R9S extends ClientSDK {
   private _proxy?: Proxy;
   get proxy(): Proxy {
     return (this._proxy ??= new Proxy(this._options));
+  }
+
+  private _gemini?: Gemini;
+  get gemini(): Gemini {
+    return (this._gemini ??= new Gemini(this._options));
   }
 }

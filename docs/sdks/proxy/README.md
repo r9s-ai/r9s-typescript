@@ -1,5 +1,4 @@
 # Proxy
-(*proxy*)
 
 ## Overview
 
@@ -11,9 +10,60 @@
 
 Proxy requests to target endpoint through specified channel
 
-### Example Usage
+### Example Usage: audio_transcription
 
-<!-- UsageSnippet language="typescript" operationID="createProxyRequest" method="post" path="/nextrouter/proxy/{channelid}/{target}" -->
+<!-- UsageSnippet language="typescript" operationID="createProxyRequest" method="post" path="/nextrouter/proxy/{channelid}/{target}" example="audio_transcription" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.proxy.request("123", "chat/completions", {
+    "model": "whisper-1",
+    "file": "audio.mp3",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { proxyRequest } from "@r9s/sdk/funcs/proxyRequest.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await proxyRequest(r9S, "123", "chat/completions", {
+    "model": "whisper-1",
+    "file": "audio.mp3",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("proxyRequest failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: chat_request
+
+<!-- UsageSnippet language="typescript" operationID="createProxyRequest" method="post" path="/nextrouter/proxy/{channelid}/{target}" example="chat_request" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -72,13 +122,117 @@ async function run() {
 
 run();
 ```
+### Example Usage: completion_request
+
+<!-- UsageSnippet language="typescript" operationID="createProxyRequest" method="post" path="/nextrouter/proxy/{channelid}/{target}" example="completion_request" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.proxy.request("123", "chat/completions", {
+    "model": "qwen-plus",
+    "prompt": "Write a tagline for a cloud proxy service",
+    "max_tokens": 60,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { proxyRequest } from "@r9s/sdk/funcs/proxyRequest.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await proxyRequest(r9S, "123", "chat/completions", {
+    "model": "qwen-plus",
+    "prompt": "Write a tagline for a cloud proxy service",
+    "max_tokens": 60,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("proxyRequest failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: custom_request
+
+<!-- UsageSnippet language="typescript" operationID="createProxyRequest" method="post" path="/nextrouter/proxy/{channelid}/{target}" example="custom_request" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.proxy.request("123", "chat/completions", {
+    "custom_param": "value",
+    "another_param": 123,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { proxyRequest } from "@r9s/sdk/funcs/proxyRequest.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await proxyRequest(r9S, "123", "chat/completions", {
+    "custom_param": "value",
+    "another_param": 123,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("proxyRequest failed:", res.error);
+  }
+}
+
+run();
+```
 
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `channelid`                                                                                                                                                                    | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Channel ID                                                                                                                                                                     | [object Object]                                                                                                                                                                |
-| `target`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Target path                                                                                                                                                                    | [object Object]                                                                                                                                                                |
+| `channelid`                                                                                                                                                                    | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Channel ID                                                                                                                                                                     | 123                                                                                                                                                                            |
+| `target`                                                                                                                                                                       | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Target path                                                                                                                                                                    | chat/completions                                                                                                                                                               |
 | `requestBody`                                                                                                                                                                  | Record<string, *any*>                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                             | N/A                                                                                                                                                                            |                                                                                                                                                                                |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |                                                                                                                                                                                |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |                                                                                                                                                                                |

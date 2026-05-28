@@ -17,7 +17,7 @@ async function textToSpeechBasic() {
     serverURL: process.env.R9S_BASE_URL,
   });
 
-  const response = await r9s.audioSDK.speech({
+  const response = await r9s.audio.speech({
     model: "speech-2.6-turbo",
     input: "I am good at k8s",
     voice: "alloy",
@@ -42,7 +42,7 @@ async function textToSpeechWithOptions() {
     serverURL: process.env.R9S_BASE_URL,
   });
 
-  const response = await r9s.audioSDK.speech({
+  const response = await r9s.audio.speech({
     model: "speech-2.6-turbo",
     input: "The quick brown fox jumps over the lazy dog.",
     voice: "nova",
@@ -67,7 +67,7 @@ async function textToSpeechFast() {
     serverURL: process.env.R9S_BASE_URL,
   });
 
-  const response = await r9s.audioSDK.speech({
+  const response = await r9s.audio.speech({
     model: "speech-2.6-turbo",
     input:
       "Daily update: traffic is clear, weather is sunny, meetings start at 10 AM.",
@@ -93,7 +93,7 @@ async function textToSpeechSlow() {
     serverURL: process.env.R9S_BASE_URL,
   });
 
-  const response = await r9s.audioSDK.speech({
+  const response = await r9s.audio.speech({
     model: "speech-2.6-turbo",
     input: "Practice makes perfect. Repeat after me slowly.",
     voice: "shimmer",
@@ -128,7 +128,7 @@ async function transcribeAudioBasic() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.transcribe({
+  const response = await r9s.audio.transcribe({
     file: {
       fileName: "output_slow.mp3",
       content: audioBuffer,
@@ -166,7 +166,7 @@ async function transcribeAudioWithOptions() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.transcribe({
+  const response = await r9s.audio.transcribe({
     file: {
       fileName: "output_slow.mp3",
       content: audioBuffer,
@@ -203,7 +203,7 @@ async function transcribeAudioWithTimestamps() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.transcribe({
+  const response = await r9s.audio.transcribe({
     file: {
       fileName: "meeting.wav",
       content: audioBuffer,
@@ -249,7 +249,7 @@ async function transcribeAudioSrt() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.transcribe({
+  const response = await r9s.audio.transcribe({
     file: {
       fileName: "video_audio.mp3",
       content: audioBuffer,
@@ -285,7 +285,7 @@ async function transcribeWithPrompt() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.transcribe({
+  const response = await r9s.audio.transcribe({
     file: {
       fileName: "tech_talk.mp3",
       content: audioBuffer,
@@ -326,7 +326,7 @@ async function translateAudioBasic() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.translate({
+  const response = await r9s.audio.translate({
     file: {
       fileName: "german_audio.mp3",
       content: audioBuffer,
@@ -364,7 +364,7 @@ async function translateAudioWithPrompt() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.translate({
+  const response = await r9s.audio.translate({
     file: {
       fileName: "french_audio.mp3",
       content: audioBuffer,
@@ -401,7 +401,7 @@ async function translateMeetingNotes() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.translate({
+  const response = await r9s.audio.translate({
     file: {
       fileName: "meeting_cn.mp3",
       content: audioBuffer,
@@ -435,7 +435,7 @@ async function translateWithPreciseMode() {
   });
 
   const audioBuffer = fs.readFileSync(audioFilePath);
-  const response = await r9s.audioSDK.translate({
+  const response = await r9s.audio.translate({
     file: {
       fileName: "legal_audio.mp3",
       content: audioBuffer,

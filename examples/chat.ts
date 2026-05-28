@@ -292,7 +292,7 @@ async function visionInput() {
           {
             type: "image_url",
             imageUrl: {
-              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
+              url: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800",
               detail: "high",
             },
           },

@@ -2,7 +2,7 @@
 
 {
   "name": "@r9s/sdk",
-  "version": "0.5.0",
+  "version": "0.8.3",
   "exports": {
     ".": "./src/index.ts",    
     "./errors": "./src/errors/index.ts",    

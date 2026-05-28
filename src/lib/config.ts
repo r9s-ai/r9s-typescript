@@ -14,7 +14,7 @@ export const ServerList = [
   /**
    * Production Server
    */
-  "https://api.r9s.ai/v1",
+  "https://api.r9s.ai",
 ] as const;
 
 export type SDKOptions = {
@@ -61,7 +61,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "0.1.0",
-  sdkVersion: "0.5.0",
-  genVersion: "2.770.0",
-  userAgent: "speakeasy-sdk/typescript 0.5.0 2.770.0 0.1.0 @r9s/sdk",
+  sdkVersion: "0.8.3",
+  genVersion: "2.881.4",
+  userAgent: "speakeasy-sdk/typescript 0.8.3 2.881.4 0.1.0 @r9s/sdk",
 } as const;

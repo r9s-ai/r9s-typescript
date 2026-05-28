@@ -1,5 +1,4 @@
 # Completions
-(*completions*)
 
 ## Overview
 
@@ -11,9 +10,66 @@
 
 Create a text completion, supports streaming
 
-### Example Usage
+### Example Usage: code_completion
 
-<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" -->
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="code_completion" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.completions.create({
+    model: "qwen3-coder-plus",
+    prompt: "def fibonacci(n):",
+    maxTokens: 80,
+    temperature: 0.3,
+    topP: 0.9,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { completionsCreate } from "@r9s/sdk/funcs/completionsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await completionsCreate(r9S, {
+    model: "qwen3-coder-plus",
+    prompt: "def fibonacci(n):",
+    maxTokens: 80,
+    temperature: 0.3,
+    topP: 0.9,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("completionsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: simple
+
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="simple" -->
 ```typescript
 import { R9S } from "@r9s/sdk";
 
@@ -53,6 +109,122 @@ async function run() {
     model: "gpt-4o-mini",
     prompt: "Once upon a time",
     maxTokens: 50,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("completionsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: streaming
+
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="streaming" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.completions.create({
+    model: "gpt-4o-mini",
+    prompt: "List 3 benefits of unit testing",
+    maxTokens: 64,
+    stop: [
+      "\n\n",
+    ],
+    stream: true,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { completionsCreate } from "@r9s/sdk/funcs/completionsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await completionsCreate(r9S, {
+    model: "gpt-4o-mini",
+    prompt: "List 3 benefits of unit testing",
+    maxTokens: 64,
+    stop: [
+      "\n\n",
+    ],
+    stream: true,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("completionsCreate failed:", res.error);
+  }
+}
+
+run();
+```
+### Example Usage: with_options
+
+<!-- UsageSnippet language="typescript" operationID="createCompletion" method="post" path="/completions" example="with_options" -->
+```typescript
+import { R9S } from "@r9s/sdk";
+
+const r9S = new R9S({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await r9S.completions.create({
+    model: "qwen-plus",
+    prompt: "Write a haiku about coding",
+    maxTokens: 100,
+    temperature: 0.8,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { R9SCore } from "@r9s/sdk/core.js";
+import { completionsCreate } from "@r9s/sdk/funcs/completionsCreate.js";
+
+// Use `R9SCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const r9S = new R9SCore({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await completionsCreate(r9S, {
+    model: "qwen-plus",
+    prompt: "Write a haiku about coding",
+    maxTokens: 100,
+    temperature: 0.8,
   });
   if (res.ok) {
     const { value: result } = res;
