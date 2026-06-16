@@ -1,5 +1,5 @@
 {
-  "name": "@r9s/sdk",
+  "name": "r9s",
   "version": "0.8.3",
   "workspaces": [
     ".",
